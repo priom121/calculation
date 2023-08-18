@@ -1,4 +1,5 @@
 // reusable function--------------------
+
 function calculateTriangleArea(){
 const baseTriangle = InputField('base-triangle')
 const heightTriangle = InputField('height-triangle')
@@ -12,7 +13,16 @@ function calculateRectangleArea(){
   const lengthRectangle = InputField('length-Rectangle');
   const area = widthRectangle*lengthRectangle;
   setInnerTextField('Rectangle-area', area)
+
+  if(isNaN(widthRectangle)|| isNaN(lengthRectangle)){
+    alert('please provide me a number');
+    return
+  } 
+  
 }
+  
+
+
 // parallelogram-----start----------
 function calculateParallelogramArea(){
   const baseParallelogram = InputField('base-Parallelogram')
