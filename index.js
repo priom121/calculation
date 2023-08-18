@@ -29,7 +29,15 @@ function calculateRectangleArea (){
 }
 
 
-// common function.....
+function calculateParallelogramArea(){
+  const baseParallelogram = InputField('base-Parallelogram')
+  const heightParallelogram=InputField ('height-Parallelogram');
+  const area = baseParallelogram * heightParallelogram;
+  setElementInnerText('Parallelogram-area',area)
+}
+
+
+// common function of rectangle , parallelogram , ellipsis.....
 
 function InputField(filedId){
   const inputValueText =document.getElementById(filedId) ;
@@ -45,5 +53,4 @@ function setElementInnerText (elementId,area){
 
 }
 
-// Reusable Parallelogram  function///
 
