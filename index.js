@@ -43,6 +43,13 @@ function calculateEllipsisArea(){
   setElementInnerText( 'elipsis-area',area)
 }
 
+function calculatePentagonArea(){
+  const press = InputField('press')
+  const base = InputField('base')
+  const area = 0.5 * press *base;
+  setElementInnerText('pentagon-area',area)
+}
+
 // common function of rectangle , parallelogram , ellipsis.....
 
 function InputField(filedId){
