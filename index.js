@@ -35,7 +35,13 @@ function calculateParallelogramArea(){
   const area = baseParallelogram * heightParallelogram;
   setElementInnerText('Parallelogram-area',area)
 }
-
+ 
+function calculateEllipsisArea(){
+  const majorRadius = InputField('major-radius')
+  const minorRadius = InputField('minor-radius')
+  const area = 3.14 * majorRadius * minorRadius;
+  setElementInnerText( 'elipsis-area',area)
+}
 
 // common function of rectangle , parallelogram , ellipsis.....
 
