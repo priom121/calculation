@@ -1,69 +1,59 @@
+// reusable function--------------------
 function calculateTriangleArea(){
-                              // triangle base 
-    const baseValueText = document.getElementById('base-triangle');
-    const baseValueString = baseValueText.value ;
-    const base = parseFloat(baseValueString);
-    console.log(base);  
-//     height
-const heightValueText = document.getElementById('height-triangle') ;
-const heightValueString = heightValueText.value;
-const height = parseFloat(heightValueString);
-console.log(height); 
-// area
-const area = 0.5 * base * height;
-console.log(area);
- 
-const areaSpan = document.getElementById('triangle-area');
-areaSpan.innerText = area;
+const baseTriangle = InputField('base-triangle')
+const heightTriangle = InputField('height-triangle')
+const area = 0.5 * baseTriangle * heightTriangle;
+setInnerTextField('triangle-area', area)
 }
 
-// Reusable Rectangle  function///
-
-function calculateRectangleArea (){
-   const width = InputField('width-Rectangle')
-   console.log(width);
- const length = InputField('length-Rectangle');
- console.log(length);
- const area = width * length;
- setElementInnerText('Rectangle-area',area);
+// rectangle-------------start
+function calculateRectangleArea(){
+  const widthRectangle = InputField('width-Rectangle');
+  const lengthRectangle = InputField('length-Rectangle');
+  const area = widthRectangle*lengthRectangle;
+  setInnerTextField('Rectangle-area', area)
 }
-
-
+// parallelogram-----start----------
 function calculateParallelogramArea(){
   const baseParallelogram = InputField('base-Parallelogram')
-  const heightParallelogram=InputField ('height-Parallelogram');
+  const heightParallelogram = InputField('height-Parallelogram')
   const area = baseParallelogram * heightParallelogram;
-  setElementInnerText('Parallelogram-area',area)
-}
- 
-function calculateEllipsisArea(){
-  const majorRadius = InputField('major-radius')
-  const minorRadius = InputField('minor-radius')
-  const area = 3.14 * majorRadius * minorRadius;
-  setElementInnerText( 'elipsis-area',area)
+  setInnerTextField ('Parallelogram-area', area);
 }
 
-function calculatePentagonArea(){
+// Ellipsis ---- start------------
+
+function calculateEllipsisArea() {
+  const majorRadius = InputField('major-radius')
+  const MinorRadius = InputField('minor-radius');
+  const area = 3.14* majorRadius * MinorRadius;
+  setInnerTextField('elipsis-area',  area)
+}
+
+// pentagon-------start----
+
+function calculatePentagonArea() {
   const press = InputField('press')
   const base = InputField('base')
-  const area = 0.5 * press *base;
-  setElementInnerText('pentagon-area',area)
+  const area = 0.5* press * base;
+  setInnerTextField('pentagon-area', area)
+  
 }
 
-// common function of rectangle , parallelogram , ellipsis.....
-
-function InputField(filedId){
-  const inputValueText =document.getElementById(filedId) ;
-  const inputValueString = inputValueText.value ; 
-  const value = parseFloat(inputValueString);
-  return value;
+// common function for triangle,, rectangle,, Parallelogram ,,
+function InputField (elementId){
+const elementTextValue = document.getElementById(elementId);
+const elementTextString = elementTextValue.value ;
+const value =parseFloat(elementTextString);
+return value;
 }
 
-// area set ----------
-function setElementInnerText (elementId,area){
-  const element  = document.getElementById(elementId);
-  element.innerText = area;
+// set function for every geometry...
 
+function setInnerTextField (elementId ,area){
+const triangleArea = document.getElementById(elementId);
+triangleArea.innerText = area;
 }
+
 
 
